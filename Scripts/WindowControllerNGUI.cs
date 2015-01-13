@@ -25,7 +25,7 @@ namespace FileExplorerNGUI.Ex {
 		public virtual void OnStart () {}
 		public virtual void OnFileHighlighted (string path) {}
 		protected virtual void OnCancelButtonPressed () {
-			FileExplorerExNGUI.Close();
+			FileExplorerNGUIEx.Close();
 		}
 		protected virtual void OnOtherButtonPressed () {}
 	}

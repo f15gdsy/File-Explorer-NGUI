@@ -5,7 +5,7 @@ using FileExplorerNGUI.UI;
 namespace FileExplorerNGUI.Ex {
 	
 	// FileExplorerEx provides interfaces for other applications to use.
-	public class FileExplorerExNGUI {
+	public class FileExplorerNGUIEx {
 		
 		private static GameObject _windowPrefab;
 		private static GameObject _windowGo;

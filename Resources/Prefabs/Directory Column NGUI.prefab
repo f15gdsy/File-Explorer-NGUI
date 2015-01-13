@@ -28,6 +28,7 @@ GameObject:
   - 114: {fileID: 11459832}
   - 65: {fileID: 6559826}
   - 114: {fileID: 11459826}
+  - 114: {fileID: 11474724}
   m_Layer: 8
   m_Name: Directory Column NGUI
   m_TagString: Untagged
@@ -222,7 +223,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 3923087ab2b4842228ebdfb142c274dd, type: 3}
+  mSprite: {fileID: 21300000, guid: 603fe1cacf7c342f9aeb092bf9e2daac, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -257,7 +258,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: .91911763, g: .91911763, b: .91911763, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 502
   mHeight: 20
@@ -278,8 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 159828}
-  hover: {r: .764705896, g: .764705896, b: .764705896, a: 1}
-  pressed: {r: .352941155, g: .352941155, b: .352941155, a: 1}
+  hover: {r: 1, g: 1, b: 1, a: 1}
+  pressed: {r: .588235259, g: .588235259, b: .588235259, a: 1}
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   dragHighlight: 0
@@ -400,7 +401,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: cbbcd256909504ddf8a67e89bd3a8418, type: 3}
+  mSprite: {fileID: 21300000, guid: 6f8ee16ee351e4716afe1e888b2c425b, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -454,13 +455,26 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: be5ed2d34271e4c6b9a1470d70ee62d0, type: 3}
+  mSprite: {fileID: 21300000, guid: f8ae55964fcac49ebb29832f77cc17f7, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
+--- !u!114 &11474724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02842fa4878db54f9587ff4de7d9f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 0}
+  draggablePanel: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

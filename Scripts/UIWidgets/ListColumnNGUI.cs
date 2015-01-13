@@ -14,6 +14,8 @@ namespace FileExplorerNGUI.UI {
 		private int _indentLevel;
 		
 		protected bool _active = false;
+
+		protected ListWindowNGUI _window;
 		
 		private Transform _trans;
 		
@@ -56,8 +58,14 @@ namespace FileExplorerNGUI.UI {
 		public string path {get; set;}
 		
 		public ListColumnNGUI parent {get; set;}
-		
-		public ListWindowNGUI window {get; set;}
+
+		public ListWindowNGUI window {
+			get {return _window;} 
+			set {
+				_window = value;
+				GetComponent<UIDragScrollView>().scrollView = _window.scrollView;
+			}
+		}
 		
 		public Transform trans {get {return _trans;}}
 		
