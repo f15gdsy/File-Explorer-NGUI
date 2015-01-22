@@ -21,6 +21,9 @@ namespace FileExplorerNGUI.UI {
 		private Dictionary<ListColumnNGUI, ColumnRange> _columnsToChildren;
 		
 		private ListColumnNGUI _highlightColumn;
+
+		private UIPanel _scrollViewPanel;
+		private Vector2 _defaultScrollViewSize;
 		
 		
 		public ListColumnNGUI highlightColumn {
@@ -46,6 +49,9 @@ namespace FileExplorerNGUI.UI {
 		protected override void Start () {
 			_columns = new List<ListColumnNGUI>();
 			_columnsToChildren = new Dictionary<ListColumnNGUI, ColumnRange>();
+
+			_scrollViewPanel = scrollView.GetComponent<UIPanel>();
+			_defaultScrollViewSize = _scrollViewPanel.GetViewSize();
 			
 			ListColumnNGUI.indentPerLevel = indent;
 			
@@ -57,7 +63,7 @@ namespace FileExplorerNGUI.UI {
 		}
 		
 		public void CreateColumns (ListColumnNGUI parent) {
-			float currentY = 0;
+			float currentY = _scrollViewPanel.localCorners[1].y;
 			int columnIndex = 0;
 			int indentLevel = 0;
 			string directoryPath = parent == null ? Utilities.GetUserRoot() : parent.path;
@@ -122,6 +128,7 @@ namespace FileExplorerNGUI.UI {
 //			Vector3 contentPos = contentPanel.transform.localPosition;
 //			contentPanel.SetRect(contentPos.x, contentPos.y, contentPanel.GetViewSize().x, Mathf.Abs(currentY));
 
+			UpdateScrollViewSize();
 			scrollView.UpdateScrollbars();
 		}
 		
@@ -163,6 +170,7 @@ namespace FileExplorerNGUI.UI {
 			
 			SetColumnsColor();
 
+			UpdateScrollViewSize();
 			scrollView.UpdateScrollbars();
 		}
 		
@@ -176,7 +184,13 @@ namespace FileExplorerNGUI.UI {
 		private Color ChooseColumnColor (int index) {
 			return index % 2 == 0 ? columnColor1 : columnColor2;
 		}
-		
+
+		private void UpdateScrollViewSize () {
+			float height = _columns.Count * _stepY;
+			height = height > _defaultScrollViewSize.y ? _defaultScrollViewSize.y : height;
+			float y = _defaultScrollViewSize.y / 2 - height / 2;
+			_scrollViewPanel.SetRect(0, y, _scrollViewPanel.width, height);
+		}
 		
 		private struct ColumnRange {
 			public int min;
